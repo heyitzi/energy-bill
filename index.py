@@ -17,20 +17,18 @@ def energy_usage(new_day_reading, new_night_reading):
     timestamp_dt = datetime.strptime(last_reading[2], "%Y-%m-%d %H:%M:%S")
     yesterday = datetime.now().date() - timedelta(days=1)
 
-    if timestamp_dt.date() == yesterday:
-        day_usage = int(new_day_reading) - last_reading[0]
-        night_usage = int(new_night_reading) - last_reading[1]
-        print(f"Day usage:{day_usage} / Night usage:{night_usage}")
+    timestamp_dt.date() == yesterday
+    day_usage = int(new_day_reading) - last_reading[0]
+    night_usage = int(new_night_reading) - last_reading[1]
+    print(f"Day usage:{day_usage} / Night usage:{night_usage}")
 
-        day_cost = day_usage * day_rate
-        night_cost = night_usage * night_rate
+    day_cost = day_usage * day_rate
+    night_cost = night_usage * night_rate
 
-        yesterday_cost = day_cost + night_cost
-        print(f"Yesterday you spent: {yesterday_cost}GBP")
-        return yesterday_cost
+    yesterday_cost = day_cost + night_cost
+    print(f"Yesterday you spent: {yesterday_cost}GBP")
+    return yesterday_cost
     
-    else:
-       pass
 
 # Calculate daily average
 # daily_cost = energy_usage()
